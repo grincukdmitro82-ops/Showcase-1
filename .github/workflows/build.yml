@@ -22,14 +22,15 @@ jobs:
 
       - name: Install Geode CLI
         run: |
-          curl -L https://github.com/geode-sdk/cli/releases/latest/download/geode-cli-linux.zip -o cli.zip
+          curl -L https://github.com/geode-sdk/cli/releases/download/v3.7.4/geode-cli-v3.7.4-linux.zip -o cli.zip
           unzip cli.zip -d cli
           sudo mv cli/geode /usr/local/bin/geode
+          geode --version
 
       - name: Install SDK
         run: |
-          geode sdk install --path $HOME/geode-sdk
-          geode sdk update --path $HOME/geode-sdk --version 5.0.0
+          geode sdk install $HOME/geode-sdk
+          geode sdk update --version 5.0.0
 
       - name: Build
         run: |
