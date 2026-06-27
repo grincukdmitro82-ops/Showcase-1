@@ -19,11 +19,8 @@ jobs:
         with:
           ndk-version: r27c
 
-      - name: Setup Geode CLI
-        uses: geode-sdk/build-geode-mod/setup@main
-
       - name: Build
-        uses: geode-sdk/build-geode-mod@main
+        uses: geode-sdk/build-geode-mod@v2
         with:
           platform: android64
 
