@@ -3,22 +3,12 @@ name: Build Showcase
 on:
   push:
     branches: [main, master]
-  pull_request:
-    branches: [main, master]
   workflow_dispatch:
 
 jobs:
-  build:
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - name: Android64
-            os: ubuntu-latest
-            platform: android64
-
-    name: Build (${{ matrix.config.name }})
-    runs-on: ${{ matrix.config.os }}
+  build-android64:
+    name: Build Android64
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -29,14 +19,16 @@ jobs:
         with:
           ndk-version: r27c
 
+      - name: Setup Geode CLI
+        uses: geode-sdk/build-geode-mod/setup@main
+
       - name: Build
         uses: geode-sdk/build-geode-mod@main
         with:
-          platform: ${{ matrix.config.platform }}
-          build-config: Release
+          platform: android64
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.config.name }}
+          name: Android64
           path: build/*.geode
