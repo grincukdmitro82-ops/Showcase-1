@@ -14,14 +14,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup NDK
-        uses: nttld/setup-ndk@v1
-        with:
-          ndk-version: r27c
-
       - name: Build
         uses: geode-sdk/build-geode-mod@main
         with:
+          sdk: "5.0.0"
           target: android64
 
       - name: Upload artifact
