@@ -13,18 +13,9 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - name: Windows
-            os: windows-latest
-            platform: win
-          - name: Android32
-            os: ubuntu-latest
-            platform: android32
           - name: Android64
             os: ubuntu-latest
             platform: android64
-          - name: iOS
-            os: macos-latest
-            platform: ios
 
     name: Build (${{ matrix.config.name }})
     runs-on: ${{ matrix.config.os }}
@@ -33,8 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup NDK (Android)
-        if: matrix.config.platform == 'android32' || matrix.config.platform == 'android64'
+      - name: Setup NDK
         uses: nttld/setup-ndk@v1
         with:
           ndk-version: r27c
