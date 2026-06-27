@@ -20,7 +20,7 @@ jobs:
           ndk-version: r27c
 
       - name: Build
-        uses: geode-sdk/build-geode-mod@v2
+        uses: geode-sdk/build-geode-mod@v1
         with:
           platform: android64
 
