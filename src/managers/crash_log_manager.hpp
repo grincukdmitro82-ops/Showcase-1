@@ -1,6 +1,8 @@
 #pragma once
 #include <Geode/Geode.hpp>
-#include <Geode/loader/EventV2.hpp>
+#include <Geode/loader/Event.hpp>
+#include <Geode/loader/EventListener.hpp>
+
 #include "../tasks/report_crash_log.hpp"
 
 using namespace geode::prelude;

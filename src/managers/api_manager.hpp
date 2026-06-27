@@ -1,6 +1,8 @@
 #pragma once
 #include <Geode/Geode.hpp>
-#include <Geode/loader/EventV2.hpp>
+#include <Geode/loader/Event.hpp>
+#include <Geode/loader/EventListener.hpp>
+
 #include "../tasks/get_upload_submissions_left.hpp"
 #include "../tasks/upload_submissions.hpp"
 #include "../tasks/authenticate.hpp"
