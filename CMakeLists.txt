@@ -33,3 +33,4 @@ target_link_libraries(${PROJECT_NAME} libGDR)
 
 # Set up dependencies, resources, and link Geode.
 setup_geode_mod(${PROJECT_NAME})
+target_precompile_headers(${PROJECT_NAME} PRIVATE src/includes/geode.hpp)
