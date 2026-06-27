@@ -1,4 +1,7 @@
 #pragma once
+#include <Geode/Geode.hpp>
+using namespace geode::prelude;
+#pragma once
 
 #include "../includes/geode.hpp"
 #include "../tasks/get_upload_submissions_left.hpp"
